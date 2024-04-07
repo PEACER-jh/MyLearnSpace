@@ -1,0 +1,5 @@
+2024-02-14 20:39:15 - root - ERROR - ZJUlearn24: Traceback (most recent call last):
+  File "E:\code\PYTHON\ZJUlearn\CH5\ZJUlearn24.py", line 85, in <module>
+    print(1/0)
+ZeroDivisionError: division by zero
+
