@@ -2,15 +2,20 @@
 ###### owner: [PEACER]()
 
 - ROS
-  - [noetic](./ROS/noetic)
-  - foxy
-- OpenCV
+  - [x] [noetic](./ROS/noetic)
+  - [x] [foxy](./ROS/foxy)
+- [ ] [OpenCV](./)
 - Navigation
-  - nav2
-  - BehaviorTree.CPP 
+  - [ ] [Navigation2]
+  - [ ] [BehaviorTree.CPP] 
 - Python
-  - [ZJUlearn](./python/ZJUlearn/)
+  - [x] [ZJUlearn](./python/ZJUlearn/)
 - Math
-  - Higher Mathematics
-  - Linear Algebra
-  - Discrete Mathematics 
+  - [ ] [高等数学](./)
+  - [ ] [线性代数](./)
+  - [ ] [离散数学](./) 
+
+
+
+
+
