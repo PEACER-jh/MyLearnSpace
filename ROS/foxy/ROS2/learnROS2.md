@@ -28,8 +28,6 @@
   - [6.5 use and travel in time](#6.5)
 
 
-
-
 ## 1. learn about ROS Node
 ![ROS2 Node](./doc/ros2_node.png)
 <p id=1></p>
@@ -465,7 +463,11 @@ ros2 run <package_name> <client_register_name>
 ## 4. learn about ros2 launch
 <p id=4></p>
 
-[这是一个launch文件示例](./ros2_ws/ws_bringup)
+##### 创建一个启动文件
+```cli
+ros2 pkg create <package_name> --build-type ament_cmake
+```
+[这是一个launch文件示例](./ros2_ws/src/ws_bringup/launch/test_bringup.py)
 1. 修改CMakeLists.txt
 ```CMakeLists.txt
 install(
@@ -473,9 +475,41 @@ install(
   DESTINATION share/${PROJECT_NAME}
   )
 ```
-2. 测试launch文件
+2. 修改package.xml
+```xml
+<exec_depend>launch</exec_depend>
+<exec_depend>ros2launch</exec_depend>
+```
+3. 测试launch文件
 ```cli
 colcon build --packages-select <package_name>
 source install/setup.bash
 ros2 launch <package_name> <launch_file_name>
+rqt_graph
 ```
+
+##### 使用substitutions
+可以在参数中使用替换，以便在描述可重用的启动文件时提供更大的灵活性
+[这是一个launch父启动文件示例](./ros2_ws/src/ws_bringup/launch/ex_main.launch.py)
+[这是一个launch替换启动文件示例](./ros2_ws/src//ws_bringup/launch/ex_substitution.launch.py)(#TODO)
+测试launch文件
+```cli
+colcon build
+source install/setup.bash
+ros2 launch ws_bringup ex_main.launch.py (--show-args)
+ros2 launch ws_bringup ex_main.launch.py turtlesim_ns:='turtlesim3' use_provided_red:='True' new_background_r:=200
+```
+
+##### 使用event handlers
+在ROS2中启动是一个执行和管理用户定义流程的系统。它负责监视其启动的进程的状态，以及报告和响应这些进程状态的变化。这些更改称为事件，可以通过向启动系统注册事件处理程序来处理。事件处理程序可以注册特定事件，可用于监视进程状态。此外，它们还可用于定义一组复杂的规则，这些规则可用于动态修改启动文件。
+[这是一个launch父启动文件示例](./ros2_ws/src/ws_bringup/launch/ex_main.launch.py)
+测试launch文件
+```cli
+colcon build
+source install/setup.bash
+ros2 launch ws_bringup ex_eventhandler.launch.py turtlesim_ns:='turtlesim3' use_provided_red:='True' new_background_r:=200
+```
+
+
+
+
