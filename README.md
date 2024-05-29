@@ -7,7 +7,8 @@
 - [ ] [OpenCV](./)
 - Navigation
   - [ ] [Navigation2]
-  - [ ] [BehaviorTree.CPP] 
+  - [ ] [BehaviorTree.CPP]
+  - [ ] [ego-planner]
 - Python
   - [x] [ZJUlearn](./python/ZJUlearn/)
 - Math
