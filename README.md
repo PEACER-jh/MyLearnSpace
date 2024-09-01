@@ -10,7 +10,9 @@
   - [ ] [BehaviorTree.CPP]
   - [ ] [PCL]
 - Python
-  - [x] [ZJUlearn](./python/ZJUlearn/)
+  - [x] [ZJUlearn](./Python/ZJUlearn/)
+- C++
+  - [x] [ceres-sovler](./C++/ceres-solver/)
 - Math
   - [x] [高等数学](./XDU/高等数学/)
   - [x] [线性代数](./XDU/线性代数/)
