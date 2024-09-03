@@ -1,0 +1,8 @@
+{
+    "Codegeex.EnableExtension": false,
+    "files.associations": {
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "execution": "cpp"
+    }
+}

@@ -1,0 +1,29 @@
+矩阵/数组的索引
+	1.索引从0开始，不是从1开始
+	2.索引时，括号中需要填写int型变量
+	3.对于行向量和列向量，括号里可以只写一个数字
+	
+块处理
+	1. matrix.block(i,j,p,q)
+	2. matrix.block<p,q>(i,j)
+		(i, j)  块矩阵左上角点的索引位置
+		<p, q>  块矩阵的尺寸长和宽
+	3. matrix.row(i)	列索引
+	   matrix.col(j)	行索引
+	4. matrix.head(n)	  从头索引n个值
+	   matrix.tail(n)	  从尾索引n个值
+	   matrix.segment(n, m)  从中间索引，n为起始位置，m为索引数量
+	5.其他
+	
+切片???
+	1. Eigen::Vector
+	2. Eigen::Array
+	3. int N[n]
+	
+	
+构造等差数列
+	seq(firstIdx ,lastIdx)		(起始索引, 终止索引)
+	seq(firstIdx, lastIdx, incr)	(起始索引, 终止索引, 步长)
+	seqN(first, size)		(起始索引, 尺寸)
+	seqN(first, size, incr)	(起始索引, 尺寸, 步长)
+	
