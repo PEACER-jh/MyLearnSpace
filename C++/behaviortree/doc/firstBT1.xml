@@ -1,0 +1,83 @@
+<root BTCPP_format="4">
+    <BehaviorTree ID="MainTree">
+        <Sequence name="root_sequence">
+            <!-- <SaySomething   name="action_hello" message="Hello"/> -->
+            <!-- <Action ID="SaySomething"   name="action_hello" message="Hello"/> -->
+            <SaySomething message="Hello"/>
+            <SaySomething message="{my_message}"/>
+            <OpenGripper    name="open_gripper"/>
+            <ApproachObject name="approach_object"/>
+            <CloseGripper   name="close_gripper"/>
+        </Sequence>
+    </BehaviorTree>
+</root>
+
+
+<!-- compact -->
+<root BTCPP_format="4">
+    <BehaviorTree ID="MainTree">
+        <Sequence name="root_sequence">
+            <SaySomething   name="action_hello" message="Hello"/>
+            <OpenGripper    name="open_gripper"/>
+            <ApproachObject name="approach_object"/>
+            <CloseGripper   name="close_gripper"/>
+        </Sequence>
+    </BehaviorTree>
+</root>
+
+<!-- explicit -->
+<root BTCPP_format="4" >
+    <BehaviorTree ID="MainTree">
+       <Sequence name="root_sequence">
+          <Action ID="SaySomething"   name="action_hello" message="Hello"/>
+          <Action ID="OpenGripper"    name="open_gripper"/>
+          <Action ID="ApproachObject" name="approach_object"/>
+          <Action ID="CloseGripper"   name="close_gripper"/>
+       </Sequence>
+    </BehaviorTree>
+</root>
+
+
+<!-- Groot -->
+<TreeNodeModel>
+    <Action ID="SaySomething">
+        <input_port name="message" type="std::string" />
+    </Action>
+    <Action ID="OpenGripper"/>
+    <Action ID="ApproachObject"/>
+    <Action ID="CloseGripper"/>      
+</TreeNodeModel>
+</root>
+
+
+<!-- SubTree -->
+<root BTCPP_format="4" >
+    <BehaviorTree ID="MainTree">
+       <Sequence>
+          <Action  ID="SaySomething"  message="Hello World"/>
+          <SubTree ID="GraspObject"/>
+       </Sequence>
+    </BehaviorTree>
+    
+    <BehaviorTree ID="GraspObject">
+       <Sequence>
+          <Action ID="OpenGripper"/>
+          <Action ID="ApproachObject"/>
+          <Action ID="CloseGripper"/>
+       </Sequence>
+    </BehaviorTree>  
+</root>
+
+
+<!-- include file.xml -->
+ <root BTCPP_format="4" >
+     
+    <include path="grasp.xml"/>
+    
+    <BehaviorTree ID="MainTree">
+       <Sequence>
+          <Action  ID="SaySomething"  message="Hello World"/>
+          <SubTree ID="GraspObject"/>
+       </Sequence>
+    </BehaviorTree>
+ </root>
